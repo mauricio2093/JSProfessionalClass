@@ -1,0 +1,36 @@
+main{
+    margin-left: 50px;
+}
+h1{
+    text-align: center;
+}
+.info{
+    margin-left: 50px;
+}
+code{
+    color: white; 
+}
+.code{
+    background-color: #1b1b1b; 
+    padding:0px 5px 0px 5px;
+}
+.code-bg{
+    background-color: #1b1b1b; 
+    padding: 20px;
+}
+.code-1{
+    width:550px; 
+    height: 60px; 
+}
+.code-2{
+    width:200px; 
+    height: 80px;
+}
+.code-3{
+    width:200px; 
+    height: 20px;
+}
+.code-4{
+    width:650px; 
+    height: 60px; 
+}

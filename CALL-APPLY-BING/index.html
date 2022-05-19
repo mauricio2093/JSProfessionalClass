@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>métodos call, apply y bind</h1>
+        <p class="info">Es cierto que <code class="code">this </code> no es un valor que podemos asignar directamente, <br>
+            pero sí existen unos métodos que son parte del prototipo de <code>function</code>, <br>
+            se llaman: <code class="code">call </code>, <code class="code">apply </code> y <code class="code">bind </code>. Estos nos ayudarán a establecer this <br>
+            en el contexto de una llamada a una función.<br>
+            Crearemos un nuevo archivo en la carpeta de ejercicios para aprender más sobre esto:
+        </p>
+    </header>
+    <main>
+        <h2>Call</h2>
+        <p>Crearemos una funcion</p>
+        <div class="code-1 code-bg">
+            <code>
+                function saludar() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(`Hola, me llamo ${this.name} ${this.apellido}`);<br>
+                }
+            </code>
+        </div>
+        <p>
+            En este caso no tenemos la función dentro de algún objeto o clase y <br>
+            sin embargo estamos utilizando <code class="code"> this</code>. Con la ayuda de <code class="code">Call</code> vamos a establecer <br>
+            cual va a ser el <code class="code">this</code>. Para esto crearemos un objeto.
+        </p>
+        <div class="code-2 code-bg">
+            <code>
+                const augusto = {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;name: 'Augusto',<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;apellido: 'Barco'<br>
+                }
+            </code>
+        </div>
+        <p>
+            Al tener el objeto vamos a llamar a <code class="code">saludar</code> pero mediante <code class="code">call.</code><br>
+            Todas las funciones tienen los tres métodos antes mencionados, <br>
+            son tres funciones que ya vienen empaquetadas.
+        </p>
+        <div class="code-3 code-bg">
+            <code>
+                saludar.call(augusto)
+            </code>
+        </div>
+        <p>
+            Con esto establecemos que <code class="code">this</code> va a ser el objeto <code class="code">augusto</code> <br>
+            También podemos pasar parámetros aparte del contexto que ya le  <br>
+            podemos dar con el <code class="code">call</code>. Por ejemplo:
+        </p>
+        <div class="code-4 code-bg">
+            <code>
+                function caminar(metros, direccion) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(`${this.name} ${this.apellido} caminó ${metros} hacia el ${direccion}`);<br>
+                }<br>
+                caminar.call(augusto, 1000, "sur");
+            </code>
+        </div>
+        <p>Esto nos dará como resultado:</p>
+        <div class="code-3 code-bg">
+            <code>
+                Augusto Barco caminó 1000 hacia el sur
+            </code>
+        </div>
+        <p>
+            Aparte del contexto que le pasamos le mandamos dos argumentos.
+        </p>
+
+    </main>
+</body>
+</html>
